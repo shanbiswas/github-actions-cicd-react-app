@@ -4,6 +4,7 @@ function App() {
   return (
     <div className="App">
       <p>Learn CICD with Github Actions</p>
+      <p>This is a new text</p>
     </div>
   );
 }
