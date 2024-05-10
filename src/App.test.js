@@ -8,3 +8,9 @@ test('renders Learn CICD text', () => {
   const linkElement = screen.getByText(/Learn CICD/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('renders Hello Sonar text', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Hello Sonar/i);
+  expect(linkElement).toBeInTheDocument();
+});
