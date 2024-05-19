@@ -5,6 +5,7 @@ const AboutUs = () => {
     <div className="App">
       <p>About Us Page</p>
       <p>Random text</p>
+      <p>Welcome</p>
     </div>
   );
 }
