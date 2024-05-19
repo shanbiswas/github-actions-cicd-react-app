@@ -8,6 +8,7 @@ function App() {
       <p>More new text</p>
       <p>New text</p>
       <p>Hello Sonar</p>
+      <p>Text changed</p>
     </div>
   );
 }
