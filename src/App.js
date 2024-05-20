@@ -1,4 +1,6 @@
 import React from "react";
+import Contact from "./Contact";
+import AboutUs from "./AboutUs";
 
 function App() {
   return (
@@ -9,6 +11,9 @@ function App() {
       <p>New text</p>
       <p>Hello Sonar</p>
       <p>Text changed</p>
+
+      <AboutUs />
+      <Contact />
     </div>
   );
 }
