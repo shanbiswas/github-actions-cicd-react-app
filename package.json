@@ -16,7 +16,8 @@
     "build": "react-scripts build",
     "test": "jest",
     "test:ci": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "jest --coverage"
   },
   "jest": {
     "testEnvironment": "jsdom"
