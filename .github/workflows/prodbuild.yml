@@ -1,0 +1,13 @@
+name: Build App
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Starting build"
+      - uses: actions/checkout@v4
+      - run: npm install
+      - run: npm run build
+      - run: echo "Finished build"
