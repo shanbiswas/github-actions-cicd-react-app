@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import Contact from '../Contact';
+import Contact from './Contact';
 
 test(`renders 'Contact Us' text`, () => {
   render(<Contact />);
