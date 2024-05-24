@@ -5,7 +5,7 @@ import Contact from './Contact';
 
 test(`renders 'Contact Us' text`, () => {
   render(<Contact />);
-  const linkElement = screen.getByText(/Contact Usssss/i);
+  const linkElement = screen.getByText(/Contact Us/i);
   expect(linkElement).toBeInTheDocument();
 });
 
