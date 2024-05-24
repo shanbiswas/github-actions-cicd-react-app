@@ -13,8 +13,22 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Install dependencies
+        run: npm install
+      - name: Test and coverage
+        run: npm test-ci
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.organization=github-actions-react-cicd
+            -Dsonar.projectKey=shanbiswas_github-actions-cicd-react-app
+            -Dsonar.sources=src
+            -Dsonar.tests=src
+            -Dsonar.test.inclusions=src/**/*.test.js
+            -Dsonar.exclusions=src/**/*.test.js
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.coverage.exclusions=__mocks__/**,.storybook/**,src/stories/**,src/types/**
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
