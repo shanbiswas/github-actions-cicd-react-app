@@ -25,8 +25,8 @@ jobs:
             -Dsonar.projectKey=shanbiswas_github-actions-cicd-react-app
             -Dsonar.sources=src
             -Dsonar.tests=src
-            -Dsonar.test.inclusions=**/*.test.js
-            -Dsonar.exclusions=**/*.test.js
+            -Dsonar.test.inclusions=**/*
+            -Dsonar.exclusions=**/*
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
