@@ -5,6 +5,7 @@ const Contact = () => {
     <div className="App">
       <p>Contact Us</p>
       <p>Thank you for reaching out to us</p>
+      <p>Random text</p>
     </div>
   );
 }
