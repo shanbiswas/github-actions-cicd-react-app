@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/html/github-actions-cicd-react-app
+            cd /home/github-actions-cicd-react-app
             npm install
             npm build
             cd /var/www/html/react-app-cicd
