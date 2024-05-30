@@ -34,5 +34,5 @@ jobs:
             npm install
             npm run build
             cd /var/www/html/my-react-app
-            sudo rm -rf build
+            if [ -d build ]; then rm -Rf build; fi
             sudo mv build/ /var/www/html/my-react-app/
