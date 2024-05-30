@@ -5,7 +5,7 @@ import AboutUs from "./AboutUs";
 function App() {
   return (
     <div className="App">
-      <p>Learn CICD with Github Actions</p>
+      <p>Learn CICD with Github Actions CHANGED TEXT</p>
       <p>This is a new text</p>
       <p>More new text</p>
       <p>New text</p>
