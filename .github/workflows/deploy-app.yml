@@ -30,7 +30,6 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo apt-get -y update
             cd /var/www/html/github-actions-cicd-react-app
             npm install
             npm build
