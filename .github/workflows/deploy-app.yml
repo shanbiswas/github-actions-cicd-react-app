@@ -15,13 +15,13 @@ jobs:
       - name: Checkout the files
         uses: actions/checkout@v2
 
-      # - name: Deploy to target dir
-      #   uses: easingthemes/ssh-deploy@main
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-      #     REMOTE_USER: ${{ secrets.REMOTE_USER }}
-      #     TARGET: ${{ secrets.TARGET }}
+      - name: Deploy to target dir
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.TARGET }}
 
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
@@ -30,11 +30,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/github-actions-cicd-react-app
-            git pull
+            cd /home/ubuntu/my-app/github-actions-cicd-react-app
             npm install
-            npm build
-            cd /var/www/html/react-app-cicd
-            sudo rm -rf build
-            cd /var/www/html
-            sudo mv /var/www/html/github-actions-cicd-react-app/build /var/www/html/react-app-cicd/
+            npm run build
+            sudo mv build/ /var/www/html/my-react-app/
