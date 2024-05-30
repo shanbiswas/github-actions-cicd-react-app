@@ -35,4 +35,4 @@ jobs:
             npm run build
             cd /var/www/html/my-react-app/
             sudo rm -rf build
-            sudo mv build/ /var/www/html/my-react-app/
+            sudo mv /home/ubuntu/my-app/github-actions-cicd-react-app/build/ /var/www/html/my-react-app/
