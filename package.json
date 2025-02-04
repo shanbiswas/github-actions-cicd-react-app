@@ -14,13 +14,17 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
-    "test:ci": "jest",
+    "test": "jest --coverage",
+    "test:ci": "jest --coverage",
     "eject": "react-scripts eject",
     "coverage": "jest --coverage"
   },
   "jest": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "collectCoverage": true,
+    "coverageReporters": ["lcov", "text-summary"],
+    "coverageDirectory": "coverage",
+    "testMatch": ["**/*.test.js", "**/*.test.tsx"]
   },
   "eslintConfig": {
     "extends": [
