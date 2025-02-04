@@ -1,12 +1,31 @@
-name: Unit Tests
+name: SonarCloud Test Coverage
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - main  # Runs on PRs targeting the main branch
 
 jobs:
-  unit_test:
+  sonarcloud:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "Starting unit test"
-      - uses: actions/checkout@v4
-      - run: npm install && npm run test:ci
-      - run: echo "Finished unit test"
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests and Generate Coverage
+        run: npm test -- --coverage
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io

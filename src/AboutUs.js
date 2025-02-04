@@ -6,6 +6,7 @@ const AboutUs = () => {
       <p>About Us Page CHANGED TEXT</p>
       <p>Random text</p>
       <p>Welcome</p>
+      <p>New line</p>
     </div>
   );
 }
